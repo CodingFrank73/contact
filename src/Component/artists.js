@@ -61,7 +61,6 @@ const Artist = () => {
             })
             setaToz(true)
         }
-        console.log(s);
 
         setArtist(s);
     }
