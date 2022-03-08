@@ -1,5 +1,5 @@
-import ArtistItem from "./artistItem";
-import React, { useState, useEffect, Children } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import ArtistList from "./ArtistList";
 
 const Artist = () => {
