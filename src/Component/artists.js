@@ -20,7 +20,6 @@ const Artist = () => {
                 setArtist(data.slice(0, 5))
                 setNumberOfArtists(data.length)
             })
-        console.log(artist);
     }, []);
 
     function add() {
