@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import ArtistList from "./ArtistList";
+import db from "../data/db.json"
 
 const Artist = () => {
     const [artist, setArtist] = useState(null);
@@ -13,23 +14,31 @@ const Artist = () => {
         setArtist(delArtist);
     }
 
+    // useEffect(() => {
+    //     fetch('http://localhost:8000/artist')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setArtist(data.slice(0, 5))
+    //             setNumberOfArtists(data.length)
+    //         })
+    // }, []);
+
     useEffect(() => {
-        fetch('http://localhost:8000/artist')
-            .then(response => response.json())
-            .then(data => {
-                setArtist(data.slice(0, 5))
-                setNumberOfArtists(data.length)
-            })
-    }, []);
+        setArtist(db.artist.slice(0, 5))
+        setNumberOfArtists(db.artist.length)
+
+    }, [])
 
     function add() {
         let random = Math.floor(Math.random() * numberOfArtists)
 
-        fetch('http://localhost:8000/artist')
-            .then(response => response.json())
-            .then(data => {
-                setArtist(artist => [...artist, data[random]])
-            })
+        // fetch('http://localhost:8000/artist')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         setArtist(artist => [...artist, data[random]])
+        //     })
+
+        setArtist(artist => [...artist, db.artist[random]])
     }
 
     function sort() {
