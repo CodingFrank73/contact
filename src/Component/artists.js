@@ -31,14 +31,12 @@ const Artist = () => {
 
     function add() {
         let random = Math.floor(Math.random() * numberOfArtists)
-
+        setArtist(artist => [...artist, db.artist[random]])
         // fetch('http://localhost:8000/artist')
         //     .then(response => response.json())
         //     .then(data => {
         //         setArtist(artist => [...artist, data[random]])
         //     })
-
-        setArtist(artist => [...artist, db.artist[random]])
     }
 
     function sort() {
